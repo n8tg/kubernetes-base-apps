@@ -23,7 +23,7 @@ resource "helm_release" "istio-ingressgateway" {
   depends_on        = [helm_release.istiod]
   name              = "istio-ingressgateway"
   namespace         = "istio-ingressgateway"
-  chart             = "gateways"
+  chart             = "gateway"
   version           = "1.16.1"
   repository        = "https://istio-release.storage.googleapis.com/charts"
   create_namespace  = true
