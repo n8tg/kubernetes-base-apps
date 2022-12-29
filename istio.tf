@@ -2,7 +2,7 @@ resource "helm_release" "istio-base" {
   name              = "istio-base"
   namespace         = "istio-system"
   chart             = "istio"
-  version           = "0.1.0"
+  version           = "0.1.1"
   repository        = "https://helm.nategramer.com"
   create_namespace  = true
   dependency_update = true
