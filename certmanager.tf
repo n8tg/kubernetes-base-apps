@@ -3,8 +3,8 @@ resource "helm_release" "cert-manager" {
   name              = "cert-manager"
   namespace         = "cert-manager"
   chart             = "cert-manager"
-  version           = "v1.10.1"
-  repository        = "https://charts.jetstack.io"
+  version           = "0.1.0"
+  repository        = "https://helm.nategramer.com"
   create_namespace  = true
   dependency_update = true
   set {
