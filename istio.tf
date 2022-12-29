@@ -1,18 +1,7 @@
 resource "helm_release" "istio-base" {
   name              = "istio-base"
   namespace         = "istio-system"
-  chart             = "base"
-  version           = "0.1.0"
-  repository        = "https://helm.nategramer.com"
-  create_namespace  = true
-  dependency_update = true
-}
-
-resource "helm_release" "istiod" {
-  depends_on        = [helm_release.istio-base]
-  name              = "istiod"
-  namespace         = "istio-system"
-  chart             = "istiod"
+  chart             = "istio"
   version           = "0.1.0"
   repository        = "https://helm.nategramer.com"
   create_namespace  = true
@@ -23,7 +12,7 @@ resource "helm_release" "istio-ingressgateway" {
   depends_on        = [helm_release.istiod]
   name              = "istio-ingressgateway"
   namespace         = "istio-ingressgateway"
-  chart             = "gateway"
+  chart             = "istio-ingressgateway"
   version           = "0.1.0"
   repository        = "https://helm.nategramer.com"
   create_namespace  = true
