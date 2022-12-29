@@ -1,5 +1,5 @@
 resource "helm_release" "cert-manager" {
-  depends_on        = [helm_release.istiod]
+  depends_on        = [helm_release.istio-base]
   name              = "cert-manager"
   namespace         = "cert-manager"
   chart             = "cert-manager"

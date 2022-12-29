@@ -1,5 +1,5 @@
 resource "helm_release" "argocd" {
-  depends_on        = [helm_release.istiod]
+  depends_on        = [helm_release.istio-base]
   name              = "argocd"
   namespace         = "argocd"
   chart             = "argo-cd"

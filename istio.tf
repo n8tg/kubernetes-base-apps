@@ -9,7 +9,7 @@ resource "helm_release" "istio-base" {
 }
 
 resource "helm_release" "istio-ingressgateway" {
-  depends_on        = [helm_release.istiod]
+  depends_on        = [helm_release.istio-base]
   name              = "istio-ingressgateway"
   namespace         = "istio-ingressgateway"
   chart             = "istio-ingressgateway"
