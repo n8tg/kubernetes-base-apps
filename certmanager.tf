@@ -3,7 +3,7 @@ resource "helm_release" "cert-manager" {
   name              = "cert-manager"
   namespace         = "cert-manager"
   chart             = "cert-manager"
-  version           = "0.1.2"
+  version           = "0.1.1"
   repository        = "https://helm.nategramer.com"
   create_namespace  = true
   dependency_update = true
