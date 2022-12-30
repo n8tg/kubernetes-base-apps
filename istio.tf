@@ -13,7 +13,7 @@ resource "helm_release" "istio-ingressgateway" {
   name              = "istio-ingressgateway"
   namespace         = "istio-ingressgateway"
   chart             = "istio-ingressgateway"
-  version           = "0.1.1"
+  version           = "0.1.2"
   repository        = "https://helm.nategramer.com"
   create_namespace  = true
   dependency_update = true
