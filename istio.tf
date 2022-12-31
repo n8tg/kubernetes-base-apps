@@ -6,6 +6,10 @@ resource "helm_release" "istio-base" {
   repository        = "https://helm.nategramer.com"
   create_namespace  = true
   dependency_update = true
+  set {
+    name  = "clusterIngressDomain"
+    value = var.cluster_ingress_domain
+  }
 }
 
 resource "helm_release" "istio-ingressgateway" {
@@ -17,4 +21,8 @@ resource "helm_release" "istio-ingressgateway" {
   repository        = "https://helm.nategramer.com"
   create_namespace  = true
   dependency_update = true
+  set {
+    name  = "clusterIngressDomain"
+    value = var.cluster_ingress_domain
+  }
 }

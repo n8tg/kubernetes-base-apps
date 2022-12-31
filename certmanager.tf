@@ -11,4 +11,8 @@ resource "helm_release" "cert-manager" {
     name  = "installCRDs"
     value = "true"
   }
+  set {
+    name  = "clusterIngressDomain"
+    value = var.cluster_ingress_domain
+  }
 }

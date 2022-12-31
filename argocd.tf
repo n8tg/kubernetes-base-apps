@@ -7,4 +7,8 @@ resource "helm_release" "argocd" {
   repository        = "https://helm.nategramer.com"
   create_namespace  = true
   dependency_update = true
+  set {
+    name  = "clusterIngressDomain"
+    value = var.cluster_ingress_domain
+  }
 }
